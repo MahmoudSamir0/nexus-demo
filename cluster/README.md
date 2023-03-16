@@ -81,5 +81,6 @@ cat sonatype-work/nexus3/admin.password
 ```
 ## now change your password
 
-# congratulation nexus is ready 
-# *NOTE* It will take a long time to get ready
+## congratulation nexus is ready 
+# NOTE
+## It will take a long time to get ready
