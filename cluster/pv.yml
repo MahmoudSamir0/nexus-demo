@@ -1,0 +1,27 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: nexus-pv
+  labels:
+    type: local
+spec:
+  storageClassName: local-storage-local # same storage class as pvc
+  claimRef:
+    name: nexus-pvc
+    namespace: nexus
+  capacity:
+    storage: 4Gi
+  accessModes:
+    - ReadWriteOnce
+  local:
+    # CHANGE ME 
+    # open the terminal and (pwd) and copy the path and past here
+    path: /mnt
+  nodeAffinity:
+    required:
+      nodeSelectorTerms:
+      - matchExpressions:
+        - key: kubernetes.io/hostname
+          operator: In
+          values:
+          - minikube
